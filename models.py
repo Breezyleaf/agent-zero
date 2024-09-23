@@ -48,10 +48,10 @@ def get_anthropic_chat(model_name:str, api_key=get_api_key("anthropic"), tempera
 
 # OpenAI models
 def get_openai_chat(model_name:str, api_key=get_api_key("openai"), temperature=DEFAULT_TEMPERATURE):
-    return ChatOpenAI(model_name=model_name, temperature=temperature, api_key=api_key) # type: ignore
+    return ChatOpenAI(model_name=model_name, temperature=temperature, api_key=api_key, base_url='https://api.deepseek.com/v1') # type: ignore
 
 def get_openai_instruct(model_name:str, api_key=get_api_key("openai"), temperature=DEFAULT_TEMPERATURE):
-    return OpenAI(model=model_name, temperature=temperature, api_key=api_key) # type: ignore
+    return OpenAI(model=model_name, temperature=temperature, api_key=api_key, base_url='https://api.deepseek.com/v1') # type: ignore
 
 def get_openai_embedding(model_name:str, api_key=get_api_key("openai")):
     return OpenAIEmbeddings(model=model_name, api_key=api_key) # type: ignore
